@@ -1,0 +1,13 @@
+{
+  "Tables": [
+    {
+      "TableName": "orders",
+      "TableArn": "arn:aws:dynamodb:us-east-1:111122223333:table/orders",
+      "BillingModeSummary": { "BillingMode": "PAY_PER_REQUEST" },
+      "TableSizeBytes": 1073741824,
+      "ReadRequestUnits": 1000000,
+      "WriteRequestUnits": 1000000,
+      "Tags": { "env": "prod", "team": "checkout" }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "currency": "USD",
+  "region": "us-east-1",
+  "source": "https://aws.amazon.com/dynamodb/pricing/",
+  "date": "2026-11-09",
+  "storage_per_gb_month": "0.25",
+  "on_demand_read_per_million": "0.125",
+  "on_demand_write_per_million": "0.625",
+  "provisioned_rcu_per_hour": "0.00013",
+  "provisioned_wcu_per_hour": "0.00065",
+  "hours_per_month": "730",
+  "note": "us-east-1 rates from the DynamoDB pricing page / AWS price list; free tier is not subtracted."
+}

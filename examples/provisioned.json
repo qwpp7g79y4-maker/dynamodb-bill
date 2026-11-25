@@ -1,0 +1,11 @@
+{
+  "Tables": [
+    {
+      "TableName": "users",
+      "BillingModeSummary": { "BillingMode": "PROVISIONED" },
+      "ProvisionedThroughput": { "ReadCapacityUnits": 10, "WriteCapacityUnits": 5 },
+      "TableSizeBytes": 0,
+      "Tags": { "env": "prod" }
+    }
+  ]
+}
