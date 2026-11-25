@@ -3,17 +3,19 @@
 STAND: lokaal groen op deze commit; de GitHub-workflow is not run.
 
 - Datum: 2026-11-25
-- Gemeten commit: ec43a2c
+- Gemeten commit: aa2e34e
 - Toolchain: cargo 1.99.0, rustc 1.99.0. `rust-version` 1.85. Versie 0.1.0.
 
 | Opdracht | Uitslag |
 |---|---|
 | `cargo fmt --check` | exit 0, schoon |
 | `cargo clippy --all-targets --locked -- -D warnings` | exit 0, geen waarschuwingen |
-| `cargo test --locked` (debug) | 92 geslaagd, 0 mislukt, 0 genegeerd |
-| `cargo test --release --locked` | 92 geslaagd, 0 mislukt, 0 genegeerd |
+| `cargo test --locked` (debug) | 95 geslaagd, 0 mislukt, 0 genegeerd |
+| `cargo test --release --locked` | 95 geslaagd, 0 mislukt, 0 genegeerd |
 
-Beide testruns: 34 lib, 2 main, 6 claims, 18 cli, 32 strict, 0 doc-tests.
+Beide testruns: 34 lib, 2 main, 6 claims, 21 cli, 32 strict, 0 doc-tests.
+
+Fix aa2e34e: gesloten stdout bij de start gaf exit 0, nu exit 2 met een melding (alleen Linux; `/dev/null` blijft exit 0). Vóór de fix faalden de twee nieuwe tests (rood); `--output` en `build.rs` bestaan niet in deze crate, dus daar viel niets te controleren.
 
 Deze pagina legt één run vast. Het is geen garantie en geen fuzzrapport.
 
