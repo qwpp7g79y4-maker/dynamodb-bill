@@ -28,7 +28,7 @@ Fix aa2e34e: closed standard output at start gave exit 0, now exit 2 with a mess
 | `cargo +1.85 fmt --check` | exit 0, clean |
 | `cargo +1.85 clippy --all-targets --locked -- -D warnings` | exit 0, no warnings |
 | `cargo +1.85 test --locked` (debug) | 95 passed, 0 failed, 0 ignored |
-| `cargo +1.85 test --release --locked` | not run |
+| `cargo +1.85 test --release --locked` | 95 passed, 0 failed, 0 ignored (2026-11-25) |
 
 Tests on 1.85 (debug): 95 passed, 0 failed (34 lib, 2 main, 6 claims, 21 cli, 32 strict, 0 doc-tests).
 

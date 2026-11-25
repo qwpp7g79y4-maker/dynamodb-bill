@@ -28,7 +28,7 @@ Fix aa2e34e: gesloten stdout bij de start gaf exit 0, nu exit 2 met een melding 
 | `cargo +1.85 fmt --check` | exit 0, schoon |
 | `cargo +1.85 clippy --all-targets --locked -- -D warnings` | exit 0, geen waarschuwingen |
 | `cargo +1.85 test --locked` (debug) | 95 geslaagd, 0 mislukt, 0 genegeerd |
-| `cargo +1.85 test --release --locked` | not run |
+| `cargo +1.85 test --release --locked` | 95 geslaagd, 0 mislukt, 0 genegeerd (2026-11-25) |
 
 Tests op 1.85 (debug): 95 geslaagd, 0 mislukt (34 lib, 2 main, 6 claims, 21 cli, 32 strict, 0 doc-tests).
 
