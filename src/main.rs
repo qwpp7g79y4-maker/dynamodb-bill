@@ -5,6 +5,10 @@ use std::process::ExitCode;
 use clap::Parser;
 use dynamodb_bill::{clean_with, run, Options};
 
+// SAFETY: the only `unsafe` is one read-only `fcntl(1, F_GETFD)` in a start-up constructor; the library still forbids `unsafe`.
+#[allow(unsafe_code)]
+mod stdout_probe;
+
 /// Offline estimate of AWS DynamoDB storage and capacity cost from local JSON. Reads files only, no network.
 #[derive(Parser, Debug)]
 #[command(
@@ -28,7 +32,17 @@ struct Cli {
     json: bool,
 }
 
+fn cannot_write() -> ExitCode {
+    let _ = writeln!(std::io::stderr(), "dynamodb-bill: could not write output");
+    ExitCode::from(2)
+}
+
 fn main() -> ExitCode {
+    // Rust replaces a closed descriptor 1 with /dev/null before `main`; the probe
+    // recorded before that whether it was closed.
+    if stdout_probe::stdout_was_closed_at_start() {
+        return cannot_write();
+    }
     let cli = match Cli::try_parse() {
         Ok(c) => c,
         Err(e) => {
@@ -52,8 +66,7 @@ fn main() -> ExitCode {
         Ok(text) => {
             let mut out = stdout().lock();
             if out.write_all(text.as_bytes()).is_err() || out.flush().is_err() {
-                let _ = writeln!(std::io::stderr(), "dynamodb-bill: could not write output");
-                return ExitCode::from(2);
+                return cannot_write();
             }
             ExitCode::SUCCESS
         }

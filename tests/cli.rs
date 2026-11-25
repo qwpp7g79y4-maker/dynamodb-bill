@@ -249,3 +249,44 @@ fn single_file_cap_32_mib_still_applies() {
         .code(2)
         .stderr(predicate::str::contains("32 MiB"));
 }
+
+/// Run the binary through `sh` with standard output closed (`>&-`) or `/dev/null`.
+#[cfg(target_os = "linux")]
+fn run_with_stdout(redirect: &str, args: &[&str]) -> (Option<i32>, String) {
+    let exe = assert_cmd::cargo::cargo_bin("dynamodb-bill");
+    let out = std::process::Command::new("sh")
+        .arg("-c")
+        .arg(format!("exec \"$0\" \"$@\" {redirect}"))
+        .arg(exe)
+        .args(args)
+        .output()
+        .unwrap();
+    (
+        out.status.code(),
+        String::from_utf8_lossy(&out.stderr).into_owned(),
+    )
+}
+
+#[cfg(target_os = "linux")]
+#[test]
+fn closed_stdout_at_start_is_exit_2() {
+    let f = fix("on-demand.json");
+    let (code, err) = run_with_stdout(">&-", &[f.to_str().unwrap()]);
+    assert_eq!(code, Some(2), "stderr: {err}");
+    assert!(err.contains("could not write output"), "stderr: {err}");
+}
+
+#[cfg(target_os = "linux")]
+#[test]
+fn closed_stdout_with_version_is_exit_2() {
+    let (code, err) = run_with_stdout(">&-", &["--version"]);
+    assert_eq!(code, Some(2), "stderr: {err}");
+}
+
+#[cfg(target_os = "linux")]
+#[test]
+fn dev_null_stdout_stays_exit_0() {
+    let f = fix("on-demand.json");
+    let (code, err) = run_with_stdout(">/dev/null", &[f.to_str().unwrap()]);
+    assert_eq!(code, Some(0), "stderr: {err}");
+}
