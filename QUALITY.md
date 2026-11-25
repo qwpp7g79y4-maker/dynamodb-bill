@@ -13,7 +13,7 @@ STATUS: green locally on this commit; the GitHub workflow is not run.
 | `cargo test --locked` (debug) | 92 passed, 0 failed, 0 ignored |
 | `cargo test --release --locked` | 92 passed, 0 failed, 0 ignored |
 
-Both test runs: 34 lib, 2 main, 6 claims, 18 cli, 32 strict, 0 doc-tests.
+Tests: 92 passed, 0 failed (34 lib, 2 main, 6 claims, 18 cli, 32 strict, 0 doc-tests), in both the debug and the release run.
 
 This page records one run. It is not a guarantee and it is not a fuzz report.
 
