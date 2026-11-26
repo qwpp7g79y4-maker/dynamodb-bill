@@ -1,5 +1,7 @@
 # Kwaliteit
 
+pep: 10
+
 STAND: lokaal groen op deze commit; de GitHub-workflow is not run.
 
 - Datum: 2026-11-25

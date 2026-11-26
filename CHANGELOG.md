@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## [0.1.0] - 2026-11-09
+
+Changes made after 2026-11-09; the version number did not change.
 
 - `ReadRequestUnits`, `WriteRequestUnits`, `ConsumedReadRequestUnits` or `ConsumedWriteRequestUnits` on a provisioned table, or on a table with no billing mode (which counts as provisioned), exit 2 and name the field. Before, they were ignored: exit 0 and 0 USD. An on-demand table (`PAY_PER_REQUEST`) with these fields stays valid.
 - README Limitations: indexes, replicas, global tables, Standard-IA and backups are not counted. Documentation only; indexes are not refused.
@@ -20,7 +22,6 @@
 - Control characters in names and labels are replaced in the text table.
 - All input files together are capped at 128 MiB (each file still 32 MiB).
 
-## [0.1.0] - 2026-11-09
 
 - First release: offline `dynamodb-bill` from local DynamoDB JSON exports.
 - On-demand and provisioned capacity (us-east-1 built-in).
