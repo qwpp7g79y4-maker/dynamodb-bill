@@ -12,7 +12,7 @@ are in `QUALITY.md`. A Dutch version is in `README.nl.md`.
 
 ## Installation
 
-Version 0.1.0. From crates.io, once 0.1.0 is published there:
+Version 0.1.0. From crates.io:
 
 ```sh
 cargo install dynamodb-bill
