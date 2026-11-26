@@ -1,6 +1,6 @@
 # Quality
 
-pep: 8.6
+pep: 10
 
 STATUS: green locally on this commit; the GitHub workflow is not run.
 

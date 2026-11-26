@@ -1,6 +1,6 @@
 # Kwaliteit
 
-pep: 8.6
+pep: 10
 
 STAND: lokaal groen op deze commit; de GitHub-workflow is not run.
 
