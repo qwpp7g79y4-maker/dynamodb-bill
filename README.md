@@ -32,7 +32,7 @@ dynamodb-bill examples/provisioned.json --json
 dynamodb-bill examples/on-demand.json examples/provisioned.json --group-by env
 ```
 
-## Aan de slag in 5 minuten
+## Quickstart in 5 minutes
 
 1. Build: `cargo build --release` (Rust 1.85+).
 2. Run the sample: `target/release/dynamodb-bill examples/on-demand.json`.
