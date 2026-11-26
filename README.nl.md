@@ -13,7 +13,7 @@ aantallen staan in `QUALITY.nl.md`. De Engelse versie is `README.md`.
 
 ## Installatie
 
-Versie 0.1.0. Van crates.io, zodra 0.1.0 daar staat:
+Versie 0.1.1. Van crates.io, zodra 0.1.1 daar staat:
 
 ```sh
 cargo install dynamodb-bill
