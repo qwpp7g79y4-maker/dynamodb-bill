@@ -1,5 +1,7 @@
 # Quality
 
+pep: 8.6
+
 STATUS: green locally on this commit; the GitHub workflow is not run.
 
 - Date: 2026-11-25

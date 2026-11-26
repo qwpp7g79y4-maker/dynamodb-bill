@@ -1,5 +1,7 @@
 # dynamodb-bill
 
+[![crates.io](https://img.shields.io/crates/v/dynamodb-bill.svg)](https://crates.io/crates/dynamodb-bill) [![downloads](https://img.shields.io/crates/d/dynamodb-bill.svg)](https://crates.io/crates/dynamodb-bill) [![CI](https://github.com/qwpp7g79y4-maker/dynamodb-bill/actions/workflows/ci.yml/badge.svg)](https://github.com/qwpp7g79y4-maker/dynamodb-bill/actions/workflows/ci.yml) [![PEPAI checked](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fqwpp7g79y4-maker%2Fdynamodb-bill%2Fmain%2F.github%2Fbadge.json)](QUALITY.md) [![MSRV 1.85](https://img.shields.io/badge/MSRV-1.85-blue.svg)](https://github.com/qwpp7g79y4-maker/dynamodb-bill/blob/main/Cargo.toml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](https://github.com/qwpp7g79y4-maker/dynamodb-bill#license)
+
 ## Why
 
 Estimate monthly **AWS DynamoDB** cost (storage, on-demand request units, and
@@ -147,6 +149,8 @@ The suite has 92 tests. See `QUALITY.md`.
 The prices are a snapshot from 2026-11-09 and are not updated automatically.
 Patches come in through Issues and should include a test. See
 `CONTRIBUTING.md`; report security problems as described in `SECURITY.md`.
+
+After a release the tool is dormant: a new version appears only for a reported bug, a request, or a security problem. Security always comes first.
 
 ## License
 
