@@ -9,7 +9,6 @@ description = "Offline estimate of AWS DynamoDB storage and capacity cost from l
 readme = "README.md"
 exclude = [".github/", "task.md", "*-plugin/"]
 repository = "https://github.com/qwpp7g79y4-maker/dynamodb-bill"
-homepage = "https://github.com/qwpp7g79y4-maker/dynamodb-bill"
 documentation = "https://github.com/qwpp7g79y4-maker/dynamodb-bill"
 keywords = ["aws", "dynamodb", "cost", "cli"]
 categories = ["command-line-utilities"]
